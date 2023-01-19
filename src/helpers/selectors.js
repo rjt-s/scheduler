@@ -13,6 +13,22 @@ export function getAppointmentsForDay(state, day) {
   return [];
 }
 
+export function getInterviewersForDay(state, day) {
+  //... returns an array of interviewers for that day
+  for(let element of state.days) {
+    if (element.name === day) {
+      let interviewers = []
+      for(let item of element.interviewers){
+        let key = String(item);
+        interviewers.push(state.interviewers[key]);
+      }
+      return interviewers;
+    }
+  }
+  return [];
+}
+
+
 export function getInterview(state, interview) {
   if(interview) {
     const student = interview.student;
