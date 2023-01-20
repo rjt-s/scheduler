@@ -29,7 +29,8 @@ export default function useApplicationData() {
       console.log(response);
       setState({
         ...state,
-        appointments
+        appointments,
+        days : updateSpots(appointments)
       })
     })
     // .catch((error) => {
@@ -38,6 +39,7 @@ export default function useApplicationData() {
   }
 
   function cancelInterview(id) {
+    console.log(id);
     const appointment = {
       ...state.appointments[id],
       interview : null
@@ -54,13 +56,34 @@ export default function useApplicationData() {
       console.log(response);
       setState({
         ...state,
-        appointments
+        appointments,
+        days : updateSpots(appointments)
       })
     })
     // .catch((error) => {
     //   console.log(error.response.status);
     // });
 
+  }
+
+  function updateSpots(appointments) {
+    // input arguments and output
+    // should i make spots a separate state object
+    // iterate over all the appointments for a particular day and set spot value equal to null counts for interview
+    // output should be an updated days object
+    // console.log('appointments',appointments);
+    // return state.days
+    let updateDays = [];
+    state.days.forEach((day) => {
+      let spots = 0;
+      for(let appointment of day.appointments){
+        if(!appointments[appointment].interview){
+          spots++;
+        }
+      }
+      updateDays.push({...day, spots})
+    })
+    return updateDays;
   }
 
   const setDay = day => setState({ ...state, day });
