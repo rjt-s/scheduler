@@ -6,6 +6,8 @@ A single page application (SPA) built using React which will allow its users to 
 appointments with their mentors
 
 ## Final Product
+!['Schedular Intro Page'](https://github.com/rjt-s/scheduler/blob/master/docs/Scheduler-Demo.png?raw=true)
+!['Schedular Form Page'](https://github.com/rjt-s/scheduler/blob/master/docs/Scheduler-Form.png?raw=true)
 
 ## Setup/ Getting Started
 
@@ -24,6 +26,13 @@ appointments with their mentors
 5. Empty slots of each day are visible in the sidebar.
 6. User is shown an error when interview cannot be booked or deleted.
 7. The application makes api requests to load and persist data.
+
+## Dependencies
+axios
+@testing-library/react-hooks
+react-test-renderer
+classnames
+sass
 
 
 ## Running Webpack Development Server
