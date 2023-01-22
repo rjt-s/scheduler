@@ -55,7 +55,6 @@ export default function Appointment(props) {
     transition(EDIT);
   }
   
-  console.log('props.interview',props.interview)
   return (
     <article className="appointment" data-testid="appointment" >
       <Header time={props.time}/>
@@ -107,8 +106,6 @@ export default function Appointment(props) {
        <Status
           message={'Deleting'}
        />}
-        
-      {/* {props.interview ? <Show student={props.interview.student} interviewer={props.interview.interviewer}/> : <Empty/>} */}
     </article>
   );
 }

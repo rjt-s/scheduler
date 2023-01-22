@@ -1,8 +1,30 @@
 # Interview Scheduler
 
-## Setup
+## Description
 
-Install dependencies with `npm install`.
+A single page application (SPA) built using React which will allow its users to view and book interview
+appointments with their mentors
+
+## Final Product
+
+## Setup/ Getting Started
+
+1. Create a new repository using this repository as a template.
+2. Clone your repository onto your local device.
+3. Install dependencies with `npm install`.
+4. Start the web server using the npm run local command. The app will be served at http://localhost:8000/.
+5. Go to http://localhost:8000/ in your browser.
+
+## Highlights
+
+1. User can view all booked and empty appointments slots between Monday to Friday.
+2. User can book an interview in an empty appointment slot.
+3. User can delete/cancel an appointment slot.
+4. User will be asked to confirm the action when they are deleting an interview.
+5. Empty slots of each day are visible in the sidebar.
+6. User is shown an error when interview cannot be booked or deleted.
+7. The application makes api requests to load and persist data.
+
 
 ## Running Webpack Development Server
 

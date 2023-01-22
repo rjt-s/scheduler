@@ -1,30 +1,25 @@
 import React from "react";
-
 import { fireEvent } from "@testing-library/react";
-
 import { render, cleanup } from "@testing-library/react";
-
 import Application from "components/Application";
-
 import { waitForElement } from "@testing-library/react";
-
 import { getByText } from "@testing-library/react"
-
 import { getAllByTestId } from "@testing-library/react";
-
 import { getByAltText } from "@testing-library/react";
-
 import { getByPlaceholderText } from "@testing-library/react";
 import { prettyDOM } from "@testing-library/react";
 import { queryByText } from "@testing-library/react";
 import { queryByAltText } from "@testing-library/react";
 import axios from "__mocks__/axios";
 
+
+
 afterEach(cleanup);
 
 it("renders without crashing", () => {
   render(<Application />);
 });
+
 
 it("defaults to Monday and changes the schedule when a new day is selected", () => {
   const { getByText } = render(<Application />);
@@ -34,6 +29,7 @@ it("defaults to Monday and changes the schedule when a new day is selected", () 
     expect(getByText("Leopold Silvers")).toBeInTheDocument();
   });
 });
+
 
 it("loads data, books an interview and reduces the spots remaining for Monday by 1", async () => {
   const { container } = render(<Application />);
@@ -55,6 +51,8 @@ it("loads data, books an interview and reduces the spots remaining for Monday by
   console.log(prettyDOM(appointment));
 });
 
+
+
 it("loads data, cancels an interview and increases the spots remaining for Monday by 1", async () => {
   // 1. Render the Application.
   const { container } = render(<Application />);
@@ -71,7 +69,7 @@ it("loads data, cancels an interview and increases the spots remaining for Monda
 
   // 4. Check that the confirmation message is shown.
   expect(
-    getByText(appointment, "Are you sure you would like to delete?")
+    getByText(appointment, "Are you sure you want to delete?")
   ).toBeInTheDocument();
 
   // 5. Click the "Confirm" button on the confirmation.
@@ -90,7 +88,6 @@ it("loads data, cancels an interview and increases the spots remaining for Monda
 
   expect(getByText(day, "2 spots remaining")).toBeInTheDocument();
 });
-
 
 
 it("shows the save error when failing to save an appointment", () => {

@@ -1,6 +1,5 @@
 import React from "react";
 import "components/InterviewerListItem.scss";
-
 import classNames from "classnames";
 
 
@@ -11,7 +10,6 @@ export default function InterviewerListItem(props) {
   function Name(props) { 
     return (props.selected && <p> {props.name}</p>);
   }
-
 
   return (
   <li className={interviewClass} onClick={props.setInterviewer}>
@@ -24,4 +22,5 @@ export default function InterviewerListItem(props) {
   </li>
   );
 }
+
 

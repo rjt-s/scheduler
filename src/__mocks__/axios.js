@@ -1,3 +1,5 @@
+// mocking axios api data for tests
+
 const fixtures = {
   days: [
     {
