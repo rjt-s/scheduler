@@ -28,11 +28,11 @@ appointments with their mentors
 7. The application makes api requests to load and persist data.
 
 ## Dependencies
-axios
-@testing-library/react-hooks
-react-test-renderer
-classnames
-sass
+- axios
+- @testing-library/react-hooks
+- react-test-renderer
+- classnames
+- sass
 
 
 ## Running Webpack Development Server
